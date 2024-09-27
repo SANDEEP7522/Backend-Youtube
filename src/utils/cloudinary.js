@@ -30,7 +30,7 @@ console.log("file is uploadd ", response.url);
     }
 }
 
-export {cloudinary}
+export {uploadOnCloudinary}
 
 
 
