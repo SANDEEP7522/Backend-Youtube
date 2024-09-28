@@ -1,8 +1,8 @@
 
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary } from "cloudinary"
 import fs from "fs"
 
-(async function() {
+// (async function() {
 
     // Configuration
     cloudinary.config({ 
@@ -11,8 +11,8 @@ import fs from "fs"
         api_secret: process.env.CLOUDINARY_CLOUD_SECRET
     });
    
-   }
-)
+//    }
+// )
 
 const uploadOnCloudinary = async (localFilePath) => {
     try {
@@ -26,7 +26,7 @@ console.log("file is uploadd ", response.url);
  return response;
     } catch (error) {
         fs.unlinkSync(localFilePath) // remove the file as the upload operation got failed 
-        return null
+        return null;
     }
 }
 

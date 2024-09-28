@@ -24,9 +24,9 @@ const userSchema = new Schema(
             trim: true,
             index: true,
         },
-        avater: {
+        avatar: {
             type: String, // cloudinary URL
-            required: true,
+           // required: true,
         },
         coverImage: {
             type: String, // Cloudinary url
@@ -60,7 +60,7 @@ userSchema.pre("save", async function (next) {
 
 
 userSchema.method.isPasswordCorrect = async function (password) {
-    return await bcrypt.compare(password,this.password)
+    return await bcrypt.compare(password, this.password)
 }
 
 userSchema.method.generateAccessToken = function(){
